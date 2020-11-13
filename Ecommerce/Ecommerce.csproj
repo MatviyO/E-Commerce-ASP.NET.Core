@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="wwwroot\admin\" />
     <Folder Include="wwwroot\user\themes\less\oregional\" />
   </ItemGroup>
 
