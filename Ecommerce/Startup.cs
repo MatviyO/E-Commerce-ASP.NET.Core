@@ -15,6 +15,8 @@ namespace Ecommerce
 
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddSession();
             services.AddMvc(options => options.EnableEndpointRouting = false);
         }
 
@@ -24,6 +26,7 @@ namespace Ecommerce
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseSession();
             app.UseStaticFiles();
 
             app.UseMvc(routes =>
