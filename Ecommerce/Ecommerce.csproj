@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Views\" />
-    <Folder Include="wwwroot\user\" />
+    <Folder Include="wwwroot\user\themes\less\oregional\" />
   </ItemGroup>
 
 </Project>
