@@ -72,3 +72,6 @@ C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.pdb
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\BCrypt.Net-Core.dll
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Ecommerce.csproj.CoreCompileInputs.cache
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Ecommerce.MvcApplicationPartsAssemblyInfo.cache
