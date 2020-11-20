@@ -27,7 +27,7 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
       <p class="login-box-msg">Sign in to start your session</p>
-
+      @ViewBag.error
       <form asp-area="admin" asp-controller="login" asp-action="proccess" method="post">
         <div class="form-group has-feedback">
           <input type="text" required="required" class="form-control" placeholder="Username" name="username">

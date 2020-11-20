@@ -15,12 +15,12 @@ namespace Ecommerce.Security
         {
             ClaimsIdentity claimsIdentity = new ClaimsIdentity(getUserClaims(account), CookieAuthenticationDefaults.AuthenticationScheme);
             ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(claimsIdentity);
-            await httpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);
+            /*await httpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal);*/
         }
 
         public async void SignOut(HttpContext httpContext)
         {
-            await httpContext.SignOutAsync();
+            /*await httpContext.SignOutAsync();*/
         }
         private IEnumerable<Claim> getUserClaims(Account account)
         {

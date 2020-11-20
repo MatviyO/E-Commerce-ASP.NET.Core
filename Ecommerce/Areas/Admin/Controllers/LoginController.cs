@@ -35,7 +35,7 @@ namespace Ecommerce.Areas.Admin.Controllers
             {
 
                 securityManager.SignIn(this.HttpContext, account);
-                return RedirectToAction("DashBoard");
+                return RedirectToAction("index", "dashboard", new { area = "admin" } );
 
             } else {
                 ViewBag.error = "Invalid Account";
@@ -45,7 +45,7 @@ namespace Ecommerce.Areas.Admin.Controllers
 
         private Account proccesLogin(string username, string password)
         {
-            var account = db.Accounts.SingleOrDefault(a => a.Username.Equals(username));
+            var account = db.Accounts.SingleOrDefault(a => a.Username.Equals(username) && a.Status == true);
             if (account != null)
             {
                 if (BCrypt.Net.BCrypt.Verify(password, account.Password))
@@ -60,13 +60,14 @@ namespace Ecommerce.Areas.Admin.Controllers
         [Route("signOut")]
         public IActionResult SignOut()
         {
-            return View();
+            securityManager.SignOut(this.HttpContext);
+            return RedirectToAction("index", "login" ,new { area = "admin" });
         }
 
         [Route("accessdenied")]
         public IActionResult AccessDenied()
         {
-            return View();
+            return View("AccessDenied");
         }
     }
 }

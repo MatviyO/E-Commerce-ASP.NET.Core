@@ -27,15 +27,15 @@ namespace Ecommerce
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
                 .AddCookie(options =>
                 {
-                    options.LoginPath = "/admin/login/Index";
-                    options.LogoutPath = "/admin/login/signOut";
+                    options.LoginPath = "/admin/login/index";
+                    options.LogoutPath = "/admin/login/signout";
                     options.AccessDeniedPath = "/admin/account/accessdenied";
                 });
 
             services.AddSession();
             services.AddMvc(options => options.EnableEndpointRouting = false);
             var connection = configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<DatabaseContext>(options => options.UseLazyLoadingProxies().UseSqlServer(connection));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
