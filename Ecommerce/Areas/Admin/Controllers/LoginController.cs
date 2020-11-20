@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Ecommerce.Models;
+using Ecommerce.Security;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecommerce.Areas.Admin.Controllers
@@ -12,6 +13,7 @@ namespace Ecommerce.Areas.Admin.Controllers
     public class LoginController : Controller
     {
         private DatabaseContext db = new DatabaseContext();
+        private SecurityManager securityManager = new SecurityManager();
         public LoginController(DatabaseContext _db)
         {
             db = _db;
@@ -25,9 +27,34 @@ namespace Ecommerce.Areas.Admin.Controllers
         }
 
         [Route("proccess")]
-        public IActionResult Proccess()
+        public IActionResult Proccess(string username, string password)
         {
-            return View();
+            var account = proccesLogin(username, password);
+
+            if(account != null )
+            {
+
+                securityManager.SignIn(this.HttpContext, account);
+                return RedirectToAction("DashBoard");
+
+            } else {
+                ViewBag.error = "Invalid Account";
+                return View("Index");
+            }
+        }
+
+        private Account proccesLogin(string username, string password)
+        {
+            var account = db.Accounts.SingleOrDefault(a => a.Username.Equals(username));
+            if (account != null)
+            {
+                if (BCrypt.Net.BCrypt.Verify(password, account.Password))
+                {
+                    return account;
+                }
+
+            }
+            return null;
         }
 
         [Route("signOut")]
