@@ -44,6 +44,9 @@ namespace Ecommerce
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseAuthentication();
+
             app.UseSession();
             app.UseStaticFiles();
 
@@ -53,6 +56,8 @@ namespace Ecommerce
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            
           
         }
     }
