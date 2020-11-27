@@ -24,8 +24,26 @@ namespace Ecommerce.Areas.Admin.Controllers
         [Route("index")]
         public IActionResult Index()
         {
-            ViewBag.categories = db.Categories.ToList();
+            ViewBag.categories = db.Categories.Where(c => c.Parent == null).ToList();
             return View();
+        }
+
+        [HttpGet]
+        [Route("add")]
+        public IActionResult Add()
+        {
+            var category = new Category();
+            return View("Add", category);
+        }
+
+        [HttpPost]
+        [Route("add")]
+        public IActionResult Add(Category category)
+        {
+            category.Parent = null;
+            db.Categories.Add(category);
+            db.SaveChanges();
+            return RedirectToAction("Index", "category", new { area = "admin" });
         }
     }
 }
