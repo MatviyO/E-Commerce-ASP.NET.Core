@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Ecommerce.Models;
 using Ecommerce.Security;
@@ -25,7 +26,7 @@ namespace Ecommerce.Areas.Admin.Controllers
         {
             return View();
         }
-
+        [HttpPost]
         [Route("proccess")]
         public IActionResult Proccess(string username, string password)
         {
@@ -52,7 +53,6 @@ namespace Ecommerce.Areas.Admin.Controllers
                 {
                     return account;
                 }
-
             }
             return null;
         }
@@ -62,6 +62,34 @@ namespace Ecommerce.Areas.Admin.Controllers
         {
             securityManager.SignOut(this.HttpContext);
             return RedirectToAction("index", "login" ,new { area = "admin" });
+        }
+
+        [HttpGet]
+        [Route("profile")]
+        public IActionResult Profile()
+        {
+            var user = User.FindFirst(ClaimTypes.Name);
+            var username = user.Value;
+            var account = db.Accounts.SingleOrDefault(a => a.Username.Equals(username));
+            return View("Profile");
+        }
+        [HttpPost]
+        [Route("profile")]
+        public IActionResult Profile(Account account)
+        {
+            var currentAccount = db.Accounts.SingleOrDefault(a => a.Id == account.Id);
+
+            if(string.IsNullOrEmpty(account.Password))
+            {
+                currentAccount.Password = BCrypt.Net.BCrypt.HashPassword(account.Password);
+            }
+            currentAccount.Username = account.Username;
+            currentAccount.Email = account.Email;
+            currentAccount.FullName = account.FullName;
+            db.SaveChanges();
+            ViewBag.msg = "Done";
+           
+            return View("Profile");
         }
 
         [Route("accessdenied")]
