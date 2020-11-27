@@ -265,12 +265,11 @@
                 <!-- User image -->
                 <li class="user-header">
                   <img src="../../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-
                   <p>
                     @user.Value
                   </p>
                 </li>
-               
+
                 <!-- Menu Footer-->
                 <li class="user-footer">
                   <div class="pull-left">
@@ -295,30 +294,23 @@
     <aside class="main-sidebar">
       <!-- sidebar: style can be found in sidebar.less -->
       <section class="sidebar">
-       
+
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
-        
+
           <li class="treeview">
             <a href="#">
-              <i class="fa fa-folder"></i> <span>Examples</span>
+              <i class="fa fa-folder"></i> <span>Category</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
             </a>
             <ul class="treeview-menu">
-              <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-              <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-              <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-              <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-              <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-              <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-              <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-              <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-              <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+              <li><a asp-area="admin" asp-controller="category" asp-action="add"><i class="fa fa-circle-o"></i> Add</a></li>
+              <li><a asp-area="admin" asp-controller="category" asp-action="index"><i class="fa fa-circle-o"></i> List</a></li>
             </ul>
           </li>
-          
+
           <li class="header">LABELS</li>
           <li><a href="https://adminlte.io/docs"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         </ul>
@@ -329,7 +321,7 @@
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       @RenderBody()
-      
+
     </div>
     <!-- /.content-wrapper -->
     <footer class="main-footer">
@@ -340,16 +332,16 @@
       reserved.
     </footer>
 
-  
+
   </div>
   <!-- ./wrapper -->
   <!-- jQuery 3 -->
-  <script src="~/admin/bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="~/admin/components/jquery/dist/jquery.min.js"></script>
   <!-- jQuery UI 1.11.4 -->
   <script src="~/admin/components/jquery-ui/jquery-ui.min.js"></script>
   <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
   <script>
-  $.widget.bridge('uibutton', $.ui.button);
+    $.widget.bridge('uibutton', $.ui.button);
   </script>
   <!-- Bootstrap 3.3.7 -->
   <script src="~/admin/components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -381,5 +373,6 @@
   <!-- AdminLTE for demo purposes -->
   <script src="~/admin/dist/js/demo.js"></script>
   <script src="./ad.js"></script>
+  <script src="~/admin/components/datatables.net/js/jquery.dataTables.min.js"></script>
 </body>
 </html>

@@ -19,8 +19,11 @@ namespace Ecommerce.Models
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+
         public virtual DbSet<RoleAccount> RoleAccounts { get; set; }
         public virtual DbSet<Role> Roles { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

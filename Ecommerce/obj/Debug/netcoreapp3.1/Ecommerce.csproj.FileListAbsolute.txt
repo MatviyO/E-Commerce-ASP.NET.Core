@@ -75,5 +75,9 @@ C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\BCrypt.Net-Core.dll
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\Castle.Core.dll
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Login\Profile.cshtml.g.cs
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Ecommerce.csproj.CoreCompileInputs.cache
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Ecommerce.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Index.cshtml.g.cs

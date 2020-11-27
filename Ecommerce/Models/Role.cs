@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Ecommerce.Models
 {
     [Table("Role")]
-    public class Role
+    public partial class Role
     {
         public Role()
         {

@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Ecommerce.Models
 {
     [Table("Account")]
-    public class Account
+    public partial class Account
     {
         public Account()
         {
@@ -18,7 +18,7 @@ namespace Ecommerce.Models
         public string Password { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
-        public bool Status { get; set; }
+        public bool? Status { get; set; }
         public virtual ICollection<RoleAccount> RoleAccounts { get; set; }
     }
 }
