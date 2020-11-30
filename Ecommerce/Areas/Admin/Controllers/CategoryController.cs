@@ -45,5 +45,36 @@ namespace Ecommerce.Areas.Admin.Controllers
             db.SaveChanges();
             return RedirectToAction("Index", "category", new { area = "admin" });
         }
+
+       
+        [HttpGet]
+        [Route("delete/{id}")]
+        public IActionResult Delete(int id)
+        {
+            var category = db.Categories.Find(id);
+            db.Categories.Remove(category);
+            db.SaveChanges();
+            return RedirectToAction("Index", "category", new { area = "admin" });
+        }
+
+        [HttpGet]
+        [Route("edit/{id}")]
+        public IActionResult Edit(int id)
+        {
+            var category = db.Categories.Find(id);
+            return View("Edit", category);
+        }
+
+        [HttpPost]
+        [Route("edit/{id}")]
+        public IActionResult Edit(int id, Category category)
+        {
+            var currentCategory = db.Categories.Find(id);
+            currentCategory.Name = category.Name;
+            currentCategory.Status = category.Status;
+            db.SaveChanges();
+            return RedirectToAction("Index", "category", new { area = "admin" });
+        }
+
     }
 }

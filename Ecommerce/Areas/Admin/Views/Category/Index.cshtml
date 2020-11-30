@@ -41,7 +41,14 @@
                         <td><b>@category.Name</b><td>
                         <td>@category.Status ? "Show" : "Hide"</td>
                         <td>@(category.Parent == null ? "" : @category.Parent.Name)</td>
-                        <td>Edit | @(category.InverseParents != null && category.InverseParents.Count == 0 ? "Delete |" : "")  Add sub Category</td>
+                        <td>
+                          <a asp-area="admin" asp-controller="category" asp-action="edit" asp-route-id="@category.Id" >Edit </a> |
+                          @if (category.InverseParents != null && category.InverseParents.Count == 0)
+                          {
+                            <a asp-area="admin" asp-controller="category" asp-action="delete" asp-route-id="@category.Id" onclick="return confirm('Are you sure?')">Delete </a> <span>|</span>
+                          }
+                          Add sub Category
+                        </td>
                       </tr>
                       if (category.Parent != null && category.InverseParents.Count != 0)
                       {
