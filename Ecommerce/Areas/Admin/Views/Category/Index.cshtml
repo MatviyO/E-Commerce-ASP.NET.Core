@@ -38,7 +38,7 @@
                     {
                       <tr>
                         <td>@category.Id</td>
-                        <td><b>@category.Name</b>td>
+                        <td><b>@category.Name</b><td>
                         <td>@category.Status ? "Show" : "Hide"</td>
                         <td>@(category.Parent == null ? "" : @category.Parent.Name)</td>
                         <td>Edit | @(category.InverseParents != null && category.InverseParents.Count == 0 ? "Delete |" : "")  Add sub Category</td>
