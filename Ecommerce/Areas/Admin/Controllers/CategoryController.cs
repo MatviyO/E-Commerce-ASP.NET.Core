@@ -76,5 +76,24 @@ namespace Ecommerce.Areas.Admin.Controllers
             return RedirectToAction("Index", "category", new { area = "admin" });
         }
 
+        [HttpGet]
+        [Route("addsubcategory/{id}")]
+        public IActionResult AddSubCategory(int id)
+        {
+            var subcategory = new Category()
+            {
+                ParentId = id
+            };
+            return View("AddSubCategory", subcategory);
+        }
+        [HttpPost]
+        [Route("addsubcategory/{categoryId}")]
+        public IActionResult AddSubCategory(int categoryId, Category subcategory)
+        {
+            db.Categories.Add(subcategory);
+            db.SaveChanges();
+            return RedirectToAction("Index", "category", new { area = "admin" });
+        }
+
     }
 }

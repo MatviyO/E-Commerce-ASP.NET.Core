@@ -42,11 +42,12 @@
                         <td>@category.Status ? "Show" : "Hide"</td>
                         <td>@(category.Parent == null ? "" : @category.Parent.Name)</td>
                         <td>
-                          <a asp-area="admin" asp-controller="category" asp-action="edit" asp-route-id="@category.Id" >Edit </a> |
+                          <a asp-area="admin" asp-controller="category" asp-action="edit" asp-route-id="@category.Id">Edit </a> |
                           @if (category.InverseParents != null && category.InverseParents.Count == 0)
                           {
                             <a asp-area="admin" asp-controller="category" asp-action="delete" asp-route-id="@category.Id" onclick="return confirm('Are you sure?')">Delete </a> <span>|</span>
                           }
+                          <a asp-area="admin" asp-controller="category" asp-action="addsubcateory" asp-route-id="@category.Id">Edit </a>
                           Add sub Category
                         </td>
                       </tr>
@@ -59,7 +60,7 @@
                             <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  @subCategory.Name</td>
                             <td>@subCategory.Status ? "Show" : "Hide"</td>
                             <td>@subCategory.Parent.Name</td>
-                            <td>Edit | Delete </td>
+                            <td><a asp-area="admin" asp-controller="category" asp-action="edit" asp-route-id="@subCategory.Id">Edit </a> | <a asp-area="admin" asp-controller="category" asp-action="delete" asp-route-id="@subCategory.Id" onclick="return confirm('Are you sure?')">Delete </a> </td>
                           </tr>
                         }
                       }
