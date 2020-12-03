@@ -1,7 +1,4 @@
 ﻿
-@{
-  Layout = null;
-}
 
 <ul id="sideManu" class="nav nav-tabs nav-stacked">
   @foreach (var category in Model)
@@ -13,8 +10,12 @@
         <ul style="display: none;">
           @foreach (var subCateogory in category.InverseParents)
           {
-            <li><a class="active" href="products.html"><i class="icon-chevron-right">@subCateogory.Name</i> </a></li>
-         
+
+            @if (subCateogory.Status)
+            {
+              <li><a class="active" href="products.html"><i class="icon-chevron-right">@subCateogory.Name</i> </a></li>
+
+            }
           }
         </ul>
       }

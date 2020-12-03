@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.ViewComponents
 {
-    [ViewComponent(Name = "Category")]
-    public class CategoryViewComponent : ViewComponent
+    [ViewComponent(Name ="Search")]
+    public class SearchViewComponent : ViewComponent
     {
         private DatabaseContext db;
-        public CategoryViewComponent(DatabaseContext _db)
+        public SearchViewComponent(DatabaseContext _db)
         {
             this.db = _db;
         }
@@ -20,6 +20,5 @@ namespace Ecommerce.ViewComponents
             List<Category> categories = db.Categories.Where(c => c.Status && c.Parent == null).ToList();
             return View("Index", categories);
         }
-
     }
 }
