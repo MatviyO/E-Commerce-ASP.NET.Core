@@ -51,7 +51,7 @@
                           Add sub Category
                         </td>
                       </tr>
-                      if (category.Parent != null && category.InverseParents.Count != 0)
+                      if (category.InverseParents != null && category.InverseParents.Count != 0)
                       {
                         foreach (var subCategory in category.InverseParents)
                         {

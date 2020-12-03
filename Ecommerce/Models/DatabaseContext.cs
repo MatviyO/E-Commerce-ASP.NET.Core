@@ -22,7 +22,11 @@ namespace Ecommerce.Models
         public virtual DbSet<Category> Categories { get; set; }
 
         public virtual DbSet<RoleAccount> RoleAccounts { get; set; }
+        public virtual DbSet<SlideShow> SlideShows { get; set; }
+
         public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<Photo> Photos { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

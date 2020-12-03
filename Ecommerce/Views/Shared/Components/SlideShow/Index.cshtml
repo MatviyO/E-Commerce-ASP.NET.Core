@@ -1,5 +1,21 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<div id="carouselBlk">
+  <div id="myCarousel" class="carousel slide">
+    <div class="carousel-inner">
+      @{ var index = 0; }
+      @foreach (var slideShow in Model)
+      {
+        <div class="item @(index == 0 ? "active" : "")">
+          <div class="container">
+            <a href="#"><img style="width:100%" src="~/slideshows/@slideShow.name" alt="special offers"/></a>
+            <div class="carousel-caption">
+              <h4>@slideShow.Title</h4>
+              <p>@slideShow.Description</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+  </div>
+</div>
