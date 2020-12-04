@@ -4,9 +4,10 @@
   Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
 }
 
+@using Ecommerce.Models
 <section class="content-header">
   <h1>
-    SlideShow List
+    Product List
   </h1>
 
 </section>
@@ -16,49 +17,59 @@
     <div class="col-xl-12">
       <div class="box">
         <div class="box-header">
-          <h3 class="box-title">SlideShow List</h3>
+          <h3 class="box-title">Product List</h3>
         </div>
         <!-- /.box-header -->
         <div class="box-body">
-          <div id="slideShowTable" class="dataTables_wrapper form-inline dt-bootstrap">
+          <div id="productListTable" class="dataTables_wrapper form-inline dt-bootstrap">
             <div class="row"><div class="col-sm-6"></div><div class="col-sm-6"></div></div><div class="row">
               <div class="col-sm-12">
                 <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
                   <thead>
                     <tr>
                       <th>Id</th>
+                      <th>Name</th>
                       <th>Photo</th>
-                      <th>Title</th>
-                      <th>Description</th>
+                      <th>Price</th>
                       <th>Status</th>
+                      <th>Category</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                    @foreach (var slideShow in ViewBag.SlideShows)
+                    @foreach (var product in ViewBag.Products)
                     {
+                      Product pr = (Product)product;
+                      var photo = pr.Photos.SingleOrDefault(p => p.Featured == true);
                     <tr>
-                      <td>@slideShow.Id</td>
+                      <td>@product.Id</td>
+                      <td>@product.Name</td>
                       <td>
-                        <img src="~/slideshows/@slideShow.Name" width="120" alt="Alternate Text" />
+                       @* <img src="~/products/@product.Photo" alt="Alternate Text" />*@
+                      </td>
+                      <td>@product.Price</td>
+                      <td>@product.Status ? "Show" : "Hide"</td>
+                      <td>@(product.Category.Name)</td>
                       <td>
-                      <td>@slideShow.Title</td>
-                      <td>@slideShow.Description</td>
-                      <td>@slideShow.Status ? "Show" : "Hide"</td>
-                      <td>
-                        <a asp-area="admin" asp-controller="slideshow" asp-action="edit" asp-route-id="@slideShow.Id">Edit </a> |
-                        <a asp-area="admin" asp-controller="slideshow" asp-action="delete" asp-route-id="@slideShow.Id" onclick="return confirm('Are you sure?')">Delete </a>
+                        <a asp-area="admin" asp-controller="product" asp-action="edit" asp-route-id="@product.Id">Edit </a> |
+
+                        <a asp-area="admin" asp-controller="product" asp-action="delete" asp-route-id="@product.Id" onclick="return confirm('Are you sure?')">Delete </a> 
+
+
                       </td>
                     </tr>
                     }
+
+
                   </tbody>
                   <tfoot>
                     <tr>
                       <th>Id</th>
+                      <th>Name</th>
                       <th>Photo</th>
-                      <th>Title</th>
-                      <th>Description</th>
+                      <th>Price</th>
                       <th>Status</th>
+                      <th>Category</th>
                       <th>Action</th>
                     </tr>
                   </tfoot>
@@ -75,7 +86,7 @@
 
 <script>
   $(function) {
-    $('#slideShowTable').DataTable({
+    $('#productListTable').DataTable({
       'paging': true,
       'lengthChange': false,
       'searching': false,

@@ -27,6 +27,7 @@
   <link rel="stylesheet" href="~/admin/components/jvectormap/jquery-jvectormap.css">
   <!-- Date Picker -->
   <link rel="stylesheet" href="~/admin/components/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+  <link rel="stylesheet" href="~/admin/components/datatables.net-bs/css/dataTables.bootstrap.min.css">
   <!-- Daterange picker -->
   <link rel="stylesheet" href="~/admin/components/bootstrap-daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
@@ -38,7 +39,7 @@
 
     <header class="main-header">
       <!-- Logo -->
-      <a asp-area="admin" asp-controller="dashboard" asp-action="index"  class="logo">
+      <a asp-area="admin" asp-controller="dashboard" asp-action="index" class="logo">
         <!-- mini logo for sidebar mini 50x50 pixels -->
         <span class="logo-mini"><b>A</b>LT</span>
         <!-- logo for regular state and mobile devices -->
@@ -313,6 +314,20 @@
 
           <li class="treeview">
             <a href="#">
+              <i class="fa fa-folder"></i> <span>Product</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+            </a>
+            <ul class="treeview-menu">
+              <li><a asp-area="admin" asp-controller="product" asp-action="add"><i class="fa fa-circle-o"></i> Add</a></li>
+              <li><a asp-area="admin" asp-controller="product" asp-action="index"><i class="fa fa-circle-o"></i> List</a></li>
+            </ul>
+          </li>
+
+
+          <li class="treeview">
+            <a href="#">
               <i class="fa fa-folder"></i> <span>SlideShow</span>
               <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
@@ -361,6 +376,8 @@
   <!-- Morris.js charts -->
   <script src="~/admin/components/raphael/raphael.min.js"></script>
   <script src="~/admin/components/morris.js/morris.min.js"></script>
+  <script src="~/admin/components/datatables.net/js/jquery.dataTables.min.js"></script>
+  <script src="~/admin/components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
   <!-- Sparkline -->
   <script src="~/admin/components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
   <!-- jvectormap -->

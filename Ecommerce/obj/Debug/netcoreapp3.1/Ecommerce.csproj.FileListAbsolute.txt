@@ -86,3 +86,8 @@ C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Category\Edit.cshtml.g.cs
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Category\Index.cshtml.g.cs
 C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\Search\Index.cshtml.g.cs
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Index.cshtml.g.cs
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\SlideShow\Add.cshtml.g.cs
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\SlideShow\Edit.cshtml.g.cs
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\SlideShow\Index.cshtml.g.cs
+C:\Users\User\Code\github\E-Commerce-ASP.NET.Core\Ecommerce\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\SlideShow\Index.cshtml.g.cs
